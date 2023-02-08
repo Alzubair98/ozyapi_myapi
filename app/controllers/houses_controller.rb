@@ -5,5 +5,6 @@ class Houses < ApplicationController
             status: :all_houses
             houses: houses
         }
+    end
 
 end
