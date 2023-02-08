@@ -1,10 +1,7 @@
 class HousesController < ApplicationController
     def index 
-        houses = House.all
-        render json: {
-            status: :all_houses,
-            houses: houses
-        }
+        houses = House.all.to_json(include: [:image])
+        render json: houses
     end
 
     def new 
