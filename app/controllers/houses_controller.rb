@@ -1,7 +1,7 @@
 class HousesController < ApplicationController
     def index 
-        houses = House.all.to_json(include: [:image])
-        render json: houses
+        houses = House.last
+        render json: HouseSerializer.new(houses).serializable_hash[:data][:attributes]
     end
 
     def new 
