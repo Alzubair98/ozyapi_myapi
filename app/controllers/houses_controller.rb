@@ -1,8 +1,8 @@
-class Houses < ApplicationController
+class HousesController < ApplicationController
     def index 
-        houses = Houses.all
-        render json :{
-            status: :all_houses
+        houses = House.all
+        render json: {
+            status: :all_houses,
             houses: houses
         }
     end
