@@ -5,7 +5,7 @@ class SessionsController < ApplicationController
         .try(:authenticate, params[:user][:password]) # to check the password
   
         if user
-            session[:user_id] = user.id
+            # session[:user_id] = user.id
             render json: {
             stauts: :created,
             logged_in: true,
