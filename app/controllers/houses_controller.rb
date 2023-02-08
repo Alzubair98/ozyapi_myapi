@@ -7,4 +7,22 @@ class HousesController < ApplicationController
         }
     end
 
+    def new 
+    end
+
+    def create 
+        house = House.create!(house_params)
+        render json: {
+            status: :created,
+            house: house
+        }
+    end
+
+
+    private 
+
+    def house_params
+        params.require(:house).permit(:house_type)
+    end
+
 end
