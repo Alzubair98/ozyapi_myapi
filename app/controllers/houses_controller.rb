@@ -1,7 +1,9 @@
 class HousesController < ApplicationController
     def index 
-        houses = House.all.with_attached_images
-        render json: houses
+        houses = House.all.with_attached_image
+        render json: houses.map { |house| 
+        house.as_json.merge({image: url_for(house.image)})
+    }
         #render json: HouseSerializer.new(houses).serializable_hash[:data][:attributes]
         
         # houses = House.all 
