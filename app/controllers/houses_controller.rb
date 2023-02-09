@@ -22,7 +22,7 @@ class HousesController < ApplicationController
     private 
 
     def house_params
-        params.require(:house).permit(:house_type, :image)
+        params.require(:house).permit(:house_type, images: [])
     end
 
 end
