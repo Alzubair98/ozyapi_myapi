@@ -1,4 +1,5 @@
 class HouseSerializer
   include JSONAPI::Serializer
-  attributes :id, :house_type, :image, :image_url
+  has_many :houses
+  attributes :id, :house_type, :images, :image_url
 end
