@@ -2,6 +2,9 @@ class HousesController < ApplicationController
     def index 
         houses = House.last
         render json: HouseSerializer.new(houses).serializable_hash[:data][:attributes]
+        
+        # houses = House.all 
+        # render json: houses
     end
 
     def new 
