@@ -24,6 +24,14 @@ class HousesController < ApplicationController
 
     def create 
         house = House.create!(house_params.except(:images))
+        images = params[:post][:images]
+        
+        if images  # to check the images
+            images.each do |image|
+                house.images.attach(image)
+            end
+        end
+
         render json: {
             status: :created,
             house: house
