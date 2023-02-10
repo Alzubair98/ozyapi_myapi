@@ -24,7 +24,7 @@ class HousesController < ApplicationController
 
     def create 
         house = House.create!(house_params.except(:images))
-        images = params[:post][:images]
+        images = params[:house][:images]
         
         if images  # to check the images
             images.each do |image|
