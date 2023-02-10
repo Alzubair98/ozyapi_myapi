@@ -10,6 +10,13 @@ class HousesController < ApplicationController
         # render json: houses
     end
 
+    def all_images # for many images records
+        houses = House.all.with_attached_images
+        render json: houses.map { |house| 
+            house.as_json.merge({images: house.images})
+        }
+    end
+
     def new 
     end
 
@@ -25,7 +32,7 @@ class HousesController < ApplicationController
     private 
 
     def house_params
-        params.require(:house).permit(:house_type, :image)
+        params.require(:house).permit(:house_type, :images)
     end
 
 end
