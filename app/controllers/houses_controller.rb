@@ -23,7 +23,7 @@ class HousesController < ApplicationController
     end
 
     def create 
-        house = House.create!(house_params.except(:images))
+        house = House.new(house_params.except(:images))
         images = params[:house][:images]
         
         if images  # to check the images
@@ -31,11 +31,17 @@ class HousesController < ApplicationController
                 house.images.attach(image)
             end
         end
-
-        render json: {
-            status: :created,
-            house: house
-        }
+        if house.save 
+            render json: {
+                status: :created,
+                house: house
+            }
+        else 
+            render json: {
+                status: :not_created,
+                house: house.errors
+            }
+        end
     end
 
 
