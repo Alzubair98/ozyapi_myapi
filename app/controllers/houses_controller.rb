@@ -11,15 +11,19 @@ class HousesController < ApplicationController
     end
 
     def all_images # for many images records
-        houses = House.all.as_json(include: :images)
-        render json: houses
+        render json: House.last.as_json(include: :images).merge(
+            images: House.last.images.map do |image| 
+                url_for(image)
+            end
+        )
+        
     end
 
     def new 
     end
 
     def create 
-        house = House.create!(house_params)
+        house = House.create!(house_params.except(:images))
         render json: {
             status: :created,
             house: house
