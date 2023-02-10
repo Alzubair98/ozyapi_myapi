@@ -3,6 +3,8 @@ Rails.application.routes.draw do
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
   resources :houses
+
+  get 'images', to: 'houses#all_images'
   
   get 'houses', to: 'houses#index'
   delete :logout, to: "sessions#logout"
