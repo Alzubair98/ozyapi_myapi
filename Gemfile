@@ -47,6 +47,9 @@ gem 'bootsnap', require: false
 # passowrd add .env
 gem 'dotenv-rails'
 
+# use active storage variants 
+gem 'image_processing', "~> 1.2"
+
 # Use Sass to process CSS
 # gem "sassc-rails"
 
