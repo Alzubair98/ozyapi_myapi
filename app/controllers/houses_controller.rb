@@ -17,7 +17,6 @@ class HousesController < ApplicationController
                 url_for(image)
             end
         )
-        
     end
 
     def new 
@@ -49,7 +48,8 @@ class HousesController < ApplicationController
     private 
 
     def house_params
-        params.require(:house).permit(:house_type, images: [])
+        params.require(:house).permit(:house_type, images: [], :price, :real_price, :location, :owner_number, 
+                                        :age, :size, :rooms, :bath_rooms, :ref_number)
     end
 
 end
