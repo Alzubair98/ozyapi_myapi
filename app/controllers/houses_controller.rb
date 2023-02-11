@@ -9,9 +9,6 @@ class HousesController < ApplicationController
         }}
     
         #render json: HouseSerializer.new(houses).serializable_hash[:data][:attributes]
-        
-        # houses = House.all 
-        # render json: houses
     end
 
     def all_images # for many images records
