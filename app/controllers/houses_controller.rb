@@ -4,7 +4,15 @@ class HousesController < ApplicationController
         render json: houses.map { |house| {
             id: house.id,
             house_type: house.house_type,
-
+            price: house.price,
+            real_price: house.real_price,
+            location: house.location,
+            owner_number: house.owner_number,
+            age: house.age,
+            size: house.size,
+            rooms: house.rooms,
+            bath_rooms: house.bath_rooms,
+            ref_number: house.ref_number,
             images_urls: house.images.map { |image| url_for(image)}
         }}
     
@@ -48,8 +56,8 @@ class HousesController < ApplicationController
     private 
 
     def house_params
-        params.require(:house).permit(:house_type, images: [], :price, :real_price, :location, :owner_number, 
-                                        :age, :size, :rooms, :bath_rooms, :ref_number)
+        params.require(:house).permit(:house_type,  :price, :real_price, :location, :owner_number, 
+                                        :age, :size, :rooms, :bath_rooms, :ref_number, images: [])
     end
 
 end

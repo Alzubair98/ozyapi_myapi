@@ -4,11 +4,11 @@ Rails.application.routes.draw do
   resources :registrations, only: [:create]
   resources :houses
 
+  get 'users', to:'sessions#index'
+
   get 'images', to: 'houses#all_images'
   
   get 'houses', to: 'houses#index'
-  delete :logout, to: "sessions#logout"
-  get :logged_in, to: "sessions#logged_in"
-  # Defines the root path route ("/")
-  # root "articles#index"
+  
+  
 end
