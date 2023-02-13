@@ -13,6 +13,7 @@ class HousesController < ApplicationController
             rooms: house.rooms,
             bath_rooms: house.bath_rooms,
             ref_number: house.ref_number,
+            description: house.description,
             images_urls: house.images.map { |image| url_for(image)}
         }}
     
@@ -57,7 +58,8 @@ class HousesController < ApplicationController
 
     def house_params
         params.require(:house).permit(:house_type,  :price, :real_price, :location, :owner_number, 
-                                        :age, :size, :rooms, :bath_rooms, :ref_number, images: [])
+                                        :age, :size, :rooms, :bath_rooms, :ref_number, :description,
+                                        images: [])
     end
 
 end
