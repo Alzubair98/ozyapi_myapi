@@ -19,7 +19,24 @@ class HousesController < ApplicationController
     end
 
     def search_result
-        houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms])
+
+        case params[:price]
+        when "1000-2000"
+            min_price, max_price = 1000,2000
+        when "2000-3000"
+            min_price, max_price = 2000,3000
+        when "3000-4000"
+            min_price, max_price = 3000,4000
+        when "4000-5000"
+            min_price, max_price = 4000,5000
+        when "5000-6000"
+            min_price, max_price = 5000,6000
+        else 
+            min_price, max_price = 0, Float::INFINITY
+        end
+
+
+        houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms], price: params: min_price..max_price)
         render json: houses.map { |house| {
             id: house.id,
             house_type: house.house_type,
