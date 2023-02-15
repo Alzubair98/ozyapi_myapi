@@ -36,7 +36,7 @@ class HousesController < ApplicationController
         end
 
 
-        houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms], price: params: min_price..max_price)
+        houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms], price: min_price..max_price)
         render json: houses.map { |house| {
             id: house.id,
             house_type: house.house_type,
