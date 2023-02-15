@@ -37,21 +37,27 @@ class HousesController < ApplicationController
 
         houses = House.all
 
-        if params[:location].present? 
-            houses = houses.where(location: params[:location])
+        if params[:ref_number].present? 
+            houses = houses.where(ref_number: params[:ref_number])
+        else
+            if params[:location].present? 
+                houses = houses.where(location: params[:location])
+            end
+    
+            if params[:house_type].present?
+                houses = houses.where(house_type: params[:house_type])
+            end
+    
+            if params[:rooms].present? 
+                houses = houses.where(rooms: params[:rooms])
+            end
+    
+            if params[:price].present? 
+                houses = houses.where(price: min_price..max_price)
+            end
         end
 
-        if params[:house_type].present?
-            houses = houses.where(house_type: params[:house_type])
-        end
-
-        if params[:rooms].present? 
-            houses = houses.where(rooms: params[:rooms])
-        end
-
-        if params[:price].present? 
-            houses = houses.where(price: min_price..max_price)
-        end
+        
 
         # houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms], price: min_price..max_price)
         render json: houses.map { |house| {
