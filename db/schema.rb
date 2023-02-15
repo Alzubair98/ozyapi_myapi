@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_02_13_102508) do
+ActiveRecord::Schema[7.0].define(version: 2023_02_15_113356) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
@@ -46,8 +46,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_02_13_102508) do
     t.string "house_type"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.string "real_price"
-    t.string "price"
+    t.float "real_price"
+    t.float "price"
     t.string "location"
     t.string "owner_number"
     t.string "age"
