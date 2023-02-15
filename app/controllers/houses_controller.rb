@@ -35,8 +35,25 @@ class HousesController < ApplicationController
             min_price, max_price = 0, Float::INFINITY
         end
 
+        houses = House.all
 
-        houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms], price: min_price..max_price)
+        if params[:location].present? 
+            houses = houses.where(location: params[:location])
+        end
+
+        if params[:house_type].present
+            houses = houses.where(house_type: params[:house_type])
+        end
+
+        if params[:rooms].present 
+            houses = houses.where(rooms: params[:rooms])
+        end
+
+        if params[:price].present 
+            houses = houses.where(price: min_price..max_price)
+        end
+
+        # houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms], price: min_price..max_price)
         render json: houses.map { |house| {
             id: house.id,
             house_type: house.house_type,
