@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   resources :houses
 
   get 'users', to:'sessions#index'
+  get 'search', to:'houses#search_result'
 
   get 'images', to: 'houses#all_images'
   

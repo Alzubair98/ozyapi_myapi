@@ -16,8 +16,25 @@ class HousesController < ApplicationController
             description: house.description,
             images_urls: house.images.map { |image| url_for(image)}
         }}
-    
-        #render json: HouseSerializer.new(houses).serializable_hash[:data][:attributes]
+    end
+
+    def search_result
+        houses = House.where(house_type: params[:house_type],location: params[:location], rooms: params[:rooms])
+        render json: houses.map { |house| {
+            id: house.id,
+            house_type: house.house_type,
+            price: house.price,
+            real_price: house.real_price,
+            location: house.location,
+            owner_number: house.owner_number,
+            age: house.age,
+            size: house.size,
+            rooms: house.rooms,
+            bath_rooms: house.bath_rooms,
+            ref_number: house.ref_number,
+            description: house.description,
+            images_urls: house.images.map { |image| url_for(image)}
+        }}
     end
 
     def all_images # for many images records
