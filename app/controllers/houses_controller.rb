@@ -41,15 +41,15 @@ class HousesController < ApplicationController
             houses = houses.where(location: params[:location])
         end
 
-        if params[:house_type].present
+        if params[:house_type].present?
             houses = houses.where(house_type: params[:house_type])
         end
 
-        if params[:rooms].present 
+        if params[:rooms].present? 
             houses = houses.where(rooms: params[:rooms])
         end
 
-        if params[:price].present 
+        if params[:price].present? 
             houses = houses.where(price: min_price..max_price)
         end
 
