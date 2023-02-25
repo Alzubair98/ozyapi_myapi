@@ -5,8 +5,8 @@ class RegistrationsController < ApplicationController
         number: params[:user][:number],
         password: params[:user][:password],
         password_confirmation: params[:user][:password_confirmation],
-        admin: params[:user][:admin])
-        
+        admin: params[:user][:admin]) #admin can be deleted
+
       if user
         # session[:user_id] = user.id
         render json: {
