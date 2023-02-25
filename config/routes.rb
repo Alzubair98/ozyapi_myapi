@@ -10,6 +10,7 @@ Rails.application.routes.draw do
   get 'images', to: 'houses#all_images'
   
   get 'houses', to: 'houses#index'
+  post :destroy, to: 'house#destroy'
   
   
 end
