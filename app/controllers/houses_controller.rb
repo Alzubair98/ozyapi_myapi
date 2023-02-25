@@ -111,6 +111,13 @@ class HousesController < ApplicationController
     end
 
 
+    def destroy 
+        house = House.find(params[:house][:id])
+        house.destroy
+        render json: {stauts: 200, house_deleted: true}
+    end
+
+
     private 
 
     def house_params
