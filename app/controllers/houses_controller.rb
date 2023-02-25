@@ -110,7 +110,6 @@ class HousesController < ApplicationController
         end
     end
 
-
     def destroy 
         house = House.find(params[:house][:id])
         house.destroy
