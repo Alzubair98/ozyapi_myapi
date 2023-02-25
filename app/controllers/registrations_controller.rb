@@ -4,8 +4,9 @@ class RegistrationsController < ApplicationController
         email: params[:user][:email],
         number: params[:user][:number],
         password: params[:user][:password],
-        password_confirmation: params[:user][:password_confirmation])
-  
+        password_confirmation: params[:user][:password_confirmation],
+        admin: params[:user][:admin])
+        
       if user
         # session[:user_id] = user.id
         render json: {

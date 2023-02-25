@@ -11,6 +11,4 @@ Rails.application.routes.draw do
   
   get 'houses', to: 'houses#index'
   post :destroy, to: 'house#destroy'
-  
-  
 end
