@@ -1,0 +1,94 @@
+#sticky-footer {
+    flex-shrink: none;
+}
+
+.f-cont{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.facebook{
+    color: rgb(89, 128, 235);
+    background-color: aliceblue;
+    border-radius: 50%;
+    font-size: 2rem;
+}
+
+.collapsed-content ul li a{
+    color: white;
+    text-decoration: none;
+}
+
+.collapsed-content ul li a:hover{
+    color: red;
+}
+
+.social-list{
+    display: flex;
+    gap: 25px;
+    margin-left: 10px;
+    padding-bottom: 1rem;
+}
+
+.icon{
+    width: 40px;
+    height: 40px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-size: 26px;
+    color: #fff;
+    border-radius: 50%;
+    outline: 2px solid #fff;
+    transition-property: outline-offset, outline-color, background-color;
+    transition-duration: .25s;
+    
+}
+
+.icon:hover{
+    outline-offset: 4px;
+    color: #fff;
+}
+.icon:hover >*{
+    animation: shake .25s
+}
+
+.icon-instagram:hover{
+    background-image: radial-gradient(circle at 30% 107%,
+    #fdf497 0%,
+    #dfd497 5%,
+    #fd5949,
+    #d62497 60%,
+    #285AEB 90%);
+    outline-color: #a02d76 ;
+}
+
+.icon-twitter:hover {
+    background-color: #1da1f2;
+    outline-color: #1da1f2;
+    
+}
+
+.icon-facebook:hover{
+    background-color: #0999f3;
+    outline-color: #0999f3;
+}
+
+.icon-youtube:hover{
+    background-color: #f32c09;
+    outline-color: #f32c09;
+}
+
+@keyframes shake {
+    10%{transform: rotate(15deg);}
+    20%{transform: rotate(-15deg);}
+    30%{transform: rotate(15deg);}
+    40%{transform: rotate(-15deg);}
+}
+.footer-top{
+    padding-top: 10px;
+}

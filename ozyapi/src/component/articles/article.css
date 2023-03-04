@@ -1,0 +1,10 @@
+.a-f-card{
+    display: flex;
+    flex-direction: row;
+}
+
+@media (max-width: 768px){
+.a-f-card{
+    flex-direction: column;
+}
+}

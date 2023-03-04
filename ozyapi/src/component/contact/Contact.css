@@ -1,0 +1,29 @@
+.form-cont{
+    padding: 0 10rem;
+}
+
+.contact-form{
+    width: 100%;
+}
+
+/* //////////// contact page ////////// */
+
+.c-p-form{
+    padding-top: 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.c-p-card{
+    width: 50%;
+    text-align: center;
+    padding: 1rem;
+}
+
+@media (max-width: 768px){
+    .c-p-card{
+        width: 90%;
+        
+    }
+}

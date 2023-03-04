@@ -1,0 +1,13 @@
+.dashbord-cont{
+    display: flex;
+
+}
+
+.form-cont{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.dash-input-cont{
+    margin: 0  1rem 0 0.5rem;
+}
