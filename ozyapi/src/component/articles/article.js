@@ -11,13 +11,12 @@ const Article = () => {
             <h1>Property for sale in Turkey</h1>
             <p>
               Congratulations ,you have just landed on #1 website to search for
-              // property for sale in Turkey. Capitol Estate is the go-to
-              authority // for foreigners buying property in Turkey. With a
-              decade of // experience, we specialize in overseas purchases for
-              clients in // Western Europe, Russia, and the Middle East. With
-              one of the // largest property portfolios in Turkey, we are
-              dedicated and able // to provide you with maximum choice and
-              premium quality.
+              property for sale in Turkey. Capitol Estate is the go-to authority
+              for foreigners buying property in Turkey. With a decade of
+              experience, we specialize in overseas purchases for clients in
+              Western Europe, Russia, and the Middle East. With one of the
+              largest property portfolios in Turkey, we are dedicated and able
+              to provide you with maximum choice and premium quality.
             </p>
             <p>
               Providing you with the best selection of Real Estate in Turkey,
@@ -36,24 +35,23 @@ const Article = () => {
             </p>
           </div>
           <div className="a-f-image">
-            <img src="/deals.jpg" alt="image" />
+            <img src="/deals.jpg" alt="image article" />
           </div>
         </div>
         <div className="a-f-card">
           <div className="a-f-image">
-            <img src="/deals.jpg" alt="image" />
+            <img src="/deals.jpg" alt="image image article" />
           </div>
           <div className="a-f-text col-md-8">
             <h1>Property for sale in Turkey</h1>
             <p>
               Congratulations ,you have just landed on #1 website to search for
-              // property for sale in Turkey. Capitol Estate is the go-to
-              authority // for foreigners buying property in Turkey. With a
-              decade of // experience, we specialize in overseas purchases for
-              clients in // Western Europe, Russia, and the Middle East. With
-              one of the // largest property portfolios in Turkey, we are
-              dedicated and able // to provide you with maximum choice and
-              premium quality.
+              property for sale in Turkey. Capitol Estate is the go-to authority
+              for foreigners buying property in Turkey. With a decade of
+              experience, we specialize in overseas purchases for clients in
+              Western Europe, Russia, and the Middle East. With one of the
+              largest property portfolios in Turkey, we are dedicated and able
+              to provide you with maximum choice and premium quality.
             </p>
             <p>
               Providing you with the best selection of Real Estate in Turkey,

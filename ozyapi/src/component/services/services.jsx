@@ -1,17 +1,13 @@
 import React from "react";
 import "./services.css";
-import Carousel from "react-elastic-carousel";
+import { Carousel } from "react-responsive-carousel";
+import "react-responsive-carousel/lib/styles/carousel.min.css";
+
 import carouseldata from "./FCarsouelData";
 import ReactPlayer from "react-player";
 
-const breakPoints = [
-  { width: 1, itemsToShow: 1 },
-  { width: 550, itemsToShow: 2 },
-  { width: 768, itemsToShow: 3 },
-  { width: 1200, itemsToShow: 4 },
-];
-
 const Services = () => {
+  const renderThumbs = () => null;
   return (
     <div className="services">
       <div className="s-firstcursul">
@@ -21,11 +17,18 @@ const Services = () => {
           <hr className="s-secondhr" />
         </div>
 
-        <Carousel breakPoints={breakPoints}>
+        <Carousel
+          showThumbs={false}
+          centerSlidePercentage={33.3}
+          centerMode={true}
+          showIndicators={false}
+          renderThumbs={renderThumbs}
+          infiniteLoop={true}
+        >
           {carouseldata.map((item) => {
             return (
               <div key={item.key} className="c-content">
-                <img src={item.image} alt="image" className="c-image" />
+                <img src={item.image} alt="image-1" className="c-image" />
                 <p>{item.description}</p>
               </div>
             );
@@ -40,7 +43,7 @@ const Services = () => {
           <hr className="s-secondhr" />
         </div>
 
-        <Carousel breakPoints={breakPoints}>
+        <Carousel>
           <div className="s-video">
             <ReactPlayer url="" />
           </div>
@@ -62,7 +65,7 @@ const Services = () => {
           <span>LATEST VIDEOS FROM OUR YOUTUBE CHANNE</span>
           <hr className="s-secondhr" />
         </div>
-        <Carousel breakPoints={breakPoints}>
+        <Carousel showThumbs={false}>
           <div className="s-th-video">
             <ReactPlayer url="" />
           </div>
@@ -78,48 +81,6 @@ const Services = () => {
           </div>
         </Carousel>
       </div>
-      {/* chose a location */}
-      {/* <div className="s-fourth">
-        <div className="s-text">
-          <hr className="s-firsthr" />
-          <span>CHOOSE YOUR FAVORITE LOCATION IN TURKEY</span>
-          <hr className="s-secondhr" />
-        </div>
-        <div className="s-locations-cont">
-          <div className="row">
-            <div className="col-8 s-image-hodler">
-              <img src="/img1.jpg" alt="image" className="img-grid-test" />
-              <h1>text</h1>
-            </div>
-            <div className="col-4 ps-0 s-image-hodler">
-              <img src="/img1.jpg" alt="image" className="img-grid-test2" />
-              <h1>text</h1>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-4 s-image-hodler">
-              <img src="/img1.jpg" alt="image" className="img-grid-test" />
-              <h1>text</h1>
-            </div>
-            <div className="col-8 ps-2 s-image-hodler">
-              <img src="/img1.jpg" alt="image" className="img-grid-test2" />
-              <h1>text</h1>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col-6 s-image-hodler">
-              <a href="www.google.com">
-                <img src="/img1.jpg" alt="image" className="img-grid-test" />
-                <h1>text</h1>
-              </a>
-            </div>
-            <div className="col-6 ps-1 s-image-hodler">
-              <img src="/img1.jpg" alt="image" className="img-grid-test2" />
-              <h1>text</h1>
-            </div>
-          </div>
-        </div>
-      </div> */}
     </div>
   );
 };

@@ -6,7 +6,6 @@ import Home from "./component/Home/Home";
 import Dashboard from "./component/dashboard/Dashboard";
 import React, { useState, useEffect } from "react";
 import Navbar from "./component/navbar/navbar";
-import Details from "./component/preferences/details";
 import Search from "./component/home-page/search";
 import WhatsApp from "./component/contact/whatsApp";
 import WishList from "./component/wishList/WishList";
@@ -58,12 +57,12 @@ function App() {
     sessionStorage.setItem("user_id", JSON.stringify(data));
   };
 
-  const [id, setId] = useState(0);
+  // const [id, setId] = useState(0);
 
-  const handelid = (e) => {
-    const button = e.target;
-    setId(Number(button.id));
-  };
+  // const handelid = (e) => {
+  //   const button = e.target;
+  //   setId(Number(button.id));
+  // };
 
   const [searchResults, setSearchResults] = useState([]);
 
@@ -101,10 +100,7 @@ function App() {
             path="/"
             element={<Main user={user} onSearch={handleSearch} />}
           />
-          <Route
-            path="/preferencess"
-            element={<Preferencess handelid={handelid} />}
-          />
+          <Route path="/preferencess" element={<Preferencess />} />
           <Route
             path="/home"
             element={
