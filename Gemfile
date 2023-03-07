@@ -17,6 +17,9 @@ gem 'rack-cors', :require=> 'rack/cors'
 # passowrd add .env
 gem 'dotenv-rails'
 
+#adding aws configs 
+gem 'aws-sdk-s3'
+
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
 
@@ -46,9 +49,6 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 
 # Reduces boot times through caching; required in config/boot.rb
 gem 'bootsnap', require: false
-
-# passowrd add .env
-gem 'dotenv-rails'
 
 # use active storage variants 
 gem 'image_processing', "~> 1.2"
